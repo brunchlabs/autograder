@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 
 try {
+  console.log('here', process.env);
   const repo = core.getInput('repo');
   const student = core.getInput('student');
   const studentId = core.getInput('student_id');
