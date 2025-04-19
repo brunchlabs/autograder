@@ -30,7 +30,7 @@ runs:
 
     - name: Write report to file
       shell: bash
-      run: printf '%s' "${{ inputs.report }}" > report.json &&  printf '%s' '${{ toJson(github) }}' > context.json
+      run: echo "${{ inputs.report }}" > report.json
 
     - name: Run autograder
       shell: bash
