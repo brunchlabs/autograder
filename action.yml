@@ -1,6 +1,9 @@
 name: 'Autograder Action'
 description: 'Automatically grades student submissions based on a report.'
 
+env:
+  INPUT_REPO: ${{ inputs.repo }}
+
 inputs:
   repo:
     description: 'The repository name'
