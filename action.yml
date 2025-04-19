@@ -2,7 +2,7 @@ name: 'Autograder Action'
 description: 'Automatically grades student submissions based on a report.'
 
 inputs:
-   repo:
+  repo:
     description: 'The repository name'
     required: true
   student:
