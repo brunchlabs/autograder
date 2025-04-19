@@ -39,7 +39,7 @@ runs:
       shell: bash
       run: npm ci
 
-    - name: Run autograder
+    - name: Debug
       shell: bash
       run: echo ${{ inputs.report }}
 
