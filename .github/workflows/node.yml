@@ -14,9 +14,18 @@ jobs:
   grade:
     runs-on: ubuntu-latest
     steps:
+      - name: Generate token from GitHub App
+        id: generate_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.GH_APP_ID }}
+          private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Clone code
+        env:
+          TOKEN: ${{ steps.generate_token.outputs.token }}
         run: |
-          git clone https://github.com/${{ inputs.repo }} repo
+          git clone https://x-access-token:${{ env.TOKEN }}@github.com/${{ inputs.repo }} repo
           cd repo
           git checkout ${{ inputs.commit }}
 
