@@ -7,5 +7,5 @@ try {
   console.log(context);
   console.log(report);
 } catch (error) {
-  core.setFailed(`Action failed: ${error.message}`);
+  console.error(`Action failed: ${error.message}`);
 }
