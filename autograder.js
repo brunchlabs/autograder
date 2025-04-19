@@ -9,7 +9,7 @@ try {
   const report = process.env.REPORT;
   const branch = process.env.BRANCH;
 
-  console.log('report', process.env);
+  console.log('report', report);
 } catch (error) {
   core.setFailed(`Action failed: ${error.message}`);
 }

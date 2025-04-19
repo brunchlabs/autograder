@@ -41,7 +41,14 @@ runs:
 
     - name: Debug
       shell: bash
-      run: echo ${{ inputs.report }}
+      run: |
+        echo "Repository: ${{ inputs.repo }}"
+        echo "Student: ${{ inputs.student }}"
+        echo "Student ID: ${{ inputs.studentId }}"
+        echo "Organization: ${{ inputs.organization }}"
+        echo "Organization ID: ${{ inputs.organizationId }}"
+        echo "Report: ${{ inputs.report }}"
+        echo "Branch: ${{ inputs.branch }}"
 
     - name: Run autograder
       shell: bash
