@@ -1,4 +1,5 @@
 const fs = require('fs');
+const core = require('@actions/core');
 
 try {
   // const context = JSON.parse(fs.readFileSync('context.json', 'utf8'));
