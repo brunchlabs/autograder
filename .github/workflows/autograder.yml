@@ -21,19 +21,7 @@ on:
         required: true
 
 jobs:
-  print-inputs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print inputs
-        run: |
-          echo "Repository: ${{ inputs.repo }}"
-          echo "Student: ${{ inputs.student }}"
-          echo "Student ID: ${{ inputs.student_id }}"
-          echo "Organization: ${{ inputs.organization }}"
-          echo "Organization ID: ${{ inputs.organization_id }}"
-          echo "Report: ${{ inputs.report }}"
-
-  run-autograder:
+  autograde:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -42,7 +30,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # or whatever version you need
+          node-version: '18'
+
+      - name: Print inputs
+        run: |
+          echo "Repository: ${{ inputs.repo }}"
+          echo "Student: ${{ inputs.student }}"
+          echo "Student ID: ${{ inputs.student_id }}"
+          echo "Organization: ${{ inputs.organization }}"
+          echo "Organization ID: ${{ inputs.organization_id }}"
+          echo "Report: ${{ inputs.report }}"
 
       - name: Run autograder
         run: node autograder.js
