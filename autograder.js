@@ -4,9 +4,9 @@ try {
   console.log('here', process.env);
   const repo = core.getInput('repo');
   const student = core.getInput('student');
-  const studentId = core.getInput('student_id');
+  const studentId = core.getInput('studentId');
   const organization = core.getInput('organization');
-  const organizationId = core.getInput('organization_id');
+  const organizationId = core.getInput('organizationId');
   const report = core.getInput('report');
   const branch = core.getInput('branch');
 

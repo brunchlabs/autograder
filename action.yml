@@ -8,13 +8,13 @@ inputs:
   student:
     description: 'The student who pushed the code'
     required: true
-  student_id:
+  studentId:
     description: 'The student ID'
     required: true
   organization:
     description: 'The organization name'
     required: true
-  organization_id:
+  organizationId:
     description: 'The organization ID'
     required: true
   report:
