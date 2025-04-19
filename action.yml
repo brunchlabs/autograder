@@ -37,23 +37,10 @@ runs:
       with:
         node-version: '20'
 
-    - name: Debug
-      shell: bash
-      run: |
-        echo "Repository: ${{ inputs.repo }}"
-        echo "Student: ${{ inputs.student }}"
-        echo "Student ID: ${{ inputs.studentId }}"
-        echo "Organization: ${{ inputs.organization }}"
-        echo "Organization ID: ${{ inputs.organizationId }}"
-        echo "Report: ${{ inputs.report }}"
-        echo "Branch: ${{ inputs.branch }}"
-
     - name: Install dependencies
-      shell: bash
       run: npm ci
 
     - name: Run autograder
-      shell: bash
       run: node autograder.js
       env:
         REPO: ${{ inputs.repo }}
