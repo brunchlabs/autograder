@@ -37,6 +37,10 @@ runs:
       with:
         node-version: '20'
 
+    - name: Debug
+      shell: bash
+      run: echo ${{ inputs }}
+
     - name: Install dependencies
       shell: bash
       run: npm ci
