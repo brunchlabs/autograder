@@ -27,21 +27,21 @@ inputs:
 runs:
   using: node20
   main: 'autograder.js'
-  steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        repository: brunchlabs/autograder
+  # steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v3
+  #     with:
+  #       repository: brunchlabs/autograder
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22'
+  #   - name: Set up Node.js
+  #     uses: actions/setup-node@v4
+  #     with:
+  #       node-version: '22'
 
-    - name: Install dependencies
-      shell: bash
-      run: npm ci
+  #   - name: Install dependencies
+  #     shell: bash
+  #     run: npm ci
 
-    - name: Run autograder
-      shell: bash
-      run: node autograder.js
+  #   - name: Run autograder
+  #     shell: bash
+  #     run: node autograder.js
