@@ -39,7 +39,7 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      run: npm ci
+      run: npm ci && echo ${{ inputs.repo }}
 
     - name: Run autograder
       shell: bash
