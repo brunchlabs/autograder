@@ -16,6 +16,9 @@ on:
       organization_id:
         type: string
         required: true
+      report:
+        type: string
+        required: true
 
 jobs:
   print-inputs:
@@ -28,3 +31,4 @@ jobs:
           echo "Student ID: ${{ inputs.student_id }}"
           echo "Organization: ${{ inputs.organization }}"
           echo "Organization ID: ${{ inputs.organization_id }}"
+          echo "Report: ${{ inputs.report }}"
