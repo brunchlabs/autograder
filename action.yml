@@ -27,6 +27,7 @@ inputs:
 runs:
   using: node20
   main: 'autograder.js'
+  post: npm install
   # steps:
   #   - name: Checkout repository
   #     uses: actions/checkout@v3
