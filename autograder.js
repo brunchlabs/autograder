@@ -3,9 +3,9 @@ const core = require('@actions/core');
 try {
   const repo = core.getInput('repo');
   const student = core.getInput('student');
-  const studentId = core.getInput('studentId');
+  const studentId = process.env.INPUT_STUDENT_ID;
   const organization = core.getInput('organization');
-  const organizationId = core.getInput('organizationId');
+  const organizationId = process.env.INPUT_ORGANIZATION_ID;
   const report = core.getInput('report');
   const branch = core.getInput('branch');
 
