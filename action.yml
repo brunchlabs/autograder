@@ -56,10 +56,10 @@ runs:
       shell: bash
       run: node autograder.js
       env:
-        INPUT_REPO: ${{ inputs.repo }}
-        INPUT_STUDENT: ${{ inputs.student }}
-        INPUT_STUDENT_ID: ${{ inputs.studentId }}
-        INPUT_ORGANIZATION: ${{ inputs.organization }}
-        INPUT_ORGANIZATION_ID: ${{ inputs.organizationId }}
-        INPUT_REPORT: ${{ inputs.report }}
-        INPUT_BRANCH: ${{ inputs.branch }}
+        REPO: ${{ inputs.repo }}
+        STUDENT: ${{ inputs.student }}
+        STUDENT_ID: ${{ inputs.studentId }}
+        ORGANIZATION: ${{ inputs.organization }}
+        ORGANIZATION_ID: ${{ inputs.organizationId }}
+        REPORT: ${{ inputs.report }}
+        BRANCH: ${{ inputs.branch }}

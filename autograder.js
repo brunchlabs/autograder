@@ -1,13 +1,13 @@
 const core = require('@actions/core');
 
 try {
-  const repo = process.env.INPUT_REPO;
-  const student = process.env.INPUT_STUDENT;
-  const studentId = process.env.INPUT_STUDENT_ID;
-  const organization = process.env.INPUT_ORGANIZATION;
-  const organizationId = process.env.INPUT_ORGANIZATION_ID;
-  const report = process.env.INPUT_REPORT;
-  const branch = process.env.INPUT_BRANCH;
+  const repo = process.env.REPO;
+  const student = process.env.STUDENT;
+  const studentId = process.env.STUDENT_ID;
+  const organization = process.env.ORGANIZATION;
+  const organizationId = process.env.ORGANIZATION_ID;
+  const report = process.env.REPORT;
+  const branch = process.env.BRANCH;
 
   console.log('repo', repo);
   console.log('student', student);
