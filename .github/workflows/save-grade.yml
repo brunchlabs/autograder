@@ -7,10 +7,20 @@ on:
       student:
         type: string
         required: true
+      student_id:
+        type: number
+        required: true
+      organization:
+        type: string
+        required: true
+
 jobs:
   print-inputs:
     runs-on: ubuntu-latest
     steps:
       - name: Print inputs
         run: |
-          echo "${{ inputs }}"
+          echo "Repository: ${{ inputs.repo }}"
+          echo "Student: ${{ inputs.student }}"
+          echo "Student ID: ${{ inputs.student_id }}"
+          echo "Organization: ${{ inputs.organization }}"
