@@ -1,6 +1,5 @@
 name: 'Autograder Action'
 description: 'Automatically grades student submissions based on a report.'
-
 inputs:
   repo:
     description: 'The repository name'
@@ -23,7 +22,6 @@ inputs:
   branch:
     description: 'The branch that was pushed'
     required: true
-
 runs:
   using: 'composite'
   steps:
@@ -40,6 +38,10 @@ runs:
     - name: Install dependencies
       shell: bash
       run: npm ci
+
+    - name: Run autograder
+      shell: bash
+      run: echo ${{ inputs.report }}
 
     - name: Run autograder
       shell: bash
