@@ -1,0 +1,52 @@
+name: 'Autograder Action'
+description: 'Automatically grades student submissions based on a report.'
+
+inputs:
+  repo:
+    description: 'The repository name.'
+    required: true
+  student:
+    description: 'The student’s name.'
+    required: true
+  student_id:
+    description: 'The student’s ID.'
+    required: true
+  organization:
+    description: 'The organization (e.g., instructor or course).'
+    required: true
+  organization_id:
+    description: 'The organization ID.'
+    required: true
+  report:
+    description: 'The serialized test report (in JSON format).'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+
+    - name: Install dependencies
+      shell: bash
+      run: npm ci
+
+    - name: Print inputs
+      shell: bash
+      run: |
+        echo "Repository: ${{ inputs.repo }}"
+        echo "Student: ${{ inputs.student }}"
+        echo "Student ID: ${{ inputs.student_id }}"
+        echo "Organization: ${{ inputs.organization }}"
+        echo "Organization ID: ${{ inputs.organization_id }}"
+        echo "Report: ${{ inputs.report }}"
+
+    - name: Write report to file
+      shell: bash
+      run: echo "${{ inputs.report }}" > report.json
+
+    - name: Run autograder
+      shell: bash
+      run: node autograder.js
