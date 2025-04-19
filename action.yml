@@ -2,27 +2,14 @@ name: 'Autograder Action'
 description: 'Automatically grades student submissions based on a report.'
 
 inputs:
-  repo:
-    description: 'The repository name.'
+  context:
+    description: 'The entire GitHub context'
     required: true
-  student:
-    description: 'The student’s name.'
-    required: true
-  student_id:
-    description: 'The student’s ID.'
-    required: true
-  organization:
-    description: 'The organization (e.g., instructor or course).'
-    required: true
-  organization_id:
-    description: 'The organization ID.'
-    required: true
+    type: string
   report:
     description: 'The serialized test report (in JSON format).'
     required: true
-  branch:
-    description: 'The branch where push event occured'
-    required: true
+    type: string
 
 runs:
   using: 'composite'
@@ -40,16 +27,6 @@ runs:
     - name: Install dependencies
       shell: bash
       run: npm ci
-
-    - name: Print inputs
-      shell: bash
-      run: |
-        echo "Repository: ${{ inputs.repo }}"
-        echo "Student: ${{ inputs.student }}"
-        echo "Student ID: ${{ inputs.student_id }}"
-        echo "Organization: ${{ inputs.organization }}"
-        echo "Organization ID: ${{ inputs.organization_id }}"
-        echo "Report: ${{ inputs.report }}"
 
     - name: Write report to file
       shell: bash
