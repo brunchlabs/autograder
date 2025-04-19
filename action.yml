@@ -1,9 +1,6 @@
 name: 'Autograder Action'
 description: 'Automatically grades student submissions based on a report.'
 
-env:
-  INPUT_REPO: ${{ inputs.repo }}
-
 inputs:
   repo:
     description: 'The repository name'
@@ -42,7 +39,14 @@ runs:
 
     - name: Debug
       shell: bash
-      run: echo ${{ inputs }}
+      run: |
+        echo "Repository: ${{ inputs.repo }}"
+        echo "Student: ${{ inputs.student }}"
+        echo "Student ID: ${{ inputs.studentId }}"
+        echo "Organization: ${{ inputs.organization }}"
+        echo "Organization ID: ${{ inputs.organizationId }}"
+        echo "Report: ${{ inputs.report }}"
+        echo "Branch: ${{ inputs.branch }}"
 
     - name: Install dependencies
       shell: bash
@@ -51,3 +55,11 @@ runs:
     - name: Run autograder
       shell: bash
       run: node autograder.js
+      env:
+        INPUT_REPO: ${{ inputs.repo }}
+        INPUT_STUDENT: ${{ inputs.student }}
+        INPUT_STUDENT_ID: ${{ inputs.studentId }}
+        INPUT_ORGANIZATION: ${{ inputs.organization }}
+        INPUT_ORGANIZATION_ID: ${{ inputs.organizationId }}
+        INPUT_REPORT: ${{ inputs.report }}
+        INPUT_BRANCH: ${{ inputs.branch }}
