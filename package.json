@@ -4,13 +4,12 @@
   "description": "",
   "main": "autograder.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm ci"
   },
   "author": "Pape Sow Traore",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.11.1",
-    "install": "^0.13.0",
-    "npm": "^11.3.0"
+    "@actions/core": "^1.11.1"
   }
 }
