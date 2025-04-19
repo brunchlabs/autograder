@@ -1,0 +1,17 @@
+on:
+  workflow_call:
+    inputs:
+      repo:
+        type: string
+        required: true
+      student:
+        type: string
+        required: true
+jobs:
+  print-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print inputs
+        run: |
+          echo "Repository: ${{ inputs.repo }}"
+          echo "Student: ${{ inputs.student }}"
