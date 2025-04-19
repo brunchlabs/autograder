@@ -20,6 +20,9 @@ inputs:
   report:
     description: 'The serialized test report (in JSON format).'
     required: true
+  branch:
+    description: 'The branch where push event occured'
+    required: true
 
 runs:
   using: 'composite'
