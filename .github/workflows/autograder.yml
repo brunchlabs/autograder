@@ -24,10 +24,10 @@ jobs:
   autograde:
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout autograder repo
-      #   uses: actions/checkout@v3
-      #   with:
-      #     repository: brunchlabs/autograder
+      - name: Checkout autograder repo
+        uses: actions/checkout@v3
+        with:
+          repository: brunchlabs/autograder
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
