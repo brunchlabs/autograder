@@ -24,15 +24,10 @@ jobs:
   autograde:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          repository: ${{ inputs.repo }}
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
 
       - name: Print inputs
         run: |
