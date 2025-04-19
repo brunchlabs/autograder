@@ -3,7 +3,7 @@ const fs = require('fs');
 const core = require('@actions/core');
 
 try {
-  const path = process.env.GITHUB_CONTEXT_FILE || 'github_context.json';
+  const path = process.env.GITHUB_CONTEXT_FILE || 'context.json';
   const raw = fs.readFileSync(path, 'utf8');
   const context = JSON.parse(raw);
 
