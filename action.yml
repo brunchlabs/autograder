@@ -39,16 +39,9 @@ runs:
       shell: bash
       run: npm ci
 
-    - name: Debug
+    - name: Save report
       shell: bash
-      run: |
-        echo "Repository: ${{ inputs.repo }}"
-        echo "Student: ${{ inputs.student }}"
-        echo "Student ID: ${{ inputs.studentId }}"
-        echo "Organization: ${{ inputs.organization }}"
-        echo "Organization ID: ${{ inputs.organizationId }}"
-        echo "Report: ${{ inputs.report }}"
-        echo "Branch: ${{ inputs.branch }}"
+      run: echo ${{ inputs.report }} > report.json
 
     - name: Run autograder
       shell: bash
@@ -59,5 +52,4 @@ runs:
         STUDENT_ID: ${{ inputs.studentId }}
         ORGANIZATION: ${{ inputs.organization }}
         ORGANIZATION_ID: ${{ inputs.organizationId }}
-        REPORT: ${{ inputs.report }}
         BRANCH: ${{ inputs.branch }}
