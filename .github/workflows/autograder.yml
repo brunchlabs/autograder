@@ -24,9 +24,6 @@ jobs:
   autograde:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout autograder repo
-        uses: actions/checkout@v3 # This keeps *your* repo (with autograder.js)h
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
