@@ -44,14 +44,7 @@ jobs:
           echo "Report: ${{ inputs.report }}"
 
       - name: Write report to file
-        run: |
-          # Decode the report and replace URL-encoded characters
-          decoded=$(echo "${{ inputs.report }}" | sed 's/%0A/\n/g' | sed 's/%25/%/g' | sed 's/%0D/\r/g')
-          # Write the decoded content into a valid JSON file
-          echo "$decoded" > report.json
-          # Optionally print the JSON to verify
-          echo "Decoded report.json content:"
-          cat report.json
+        run: echo "${{ inputs.report }}" > report.json
 
       - name: Run autograder
         run: node autograder.js
