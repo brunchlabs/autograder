@@ -38,7 +38,9 @@ runs:
         node-version: '20'
 
     - name: Install dependencies
+      shell: bash
       run: npm ci
 
     - name: Run autograder
+      shell: bash
       run: node autograder.js
