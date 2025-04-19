@@ -2,7 +2,7 @@ const core = require('@actions/core');
 
 try {
   console.log('here', process.env);
-  const repo = core.getInput('repo');
+  // const repo = core.getInput('repo');
   const student = core.getInput('student');
   const studentId = core.getInput('studentId');
   const organization = core.getInput('organization');
@@ -10,6 +10,10 @@ try {
   const report = core.getInput('report');
   const branch = core.getInput('branch');
 
+  const workingDirectory = '${{ inputs.repo }}';
+
+  console.log('repo', repo);
+  console.log('student', student);
   console.log('repo', repo);
   console.log('student', student);
   console.log('studentId', studentId);
