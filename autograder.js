@@ -4,7 +4,7 @@ const core = require('@actions/core');
 
 try {
   // Parse the GitHub context passed as a string
-  console.log('before', core.getInput('context'));
+  console.log('before', core.getInput('context'), 'after');
   // const githubContext = JSON.parse(core.getInput('context'));
 
   // console.log(githubContext);
