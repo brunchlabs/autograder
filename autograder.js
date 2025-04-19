@@ -10,7 +10,7 @@ try {
   const report = core.getInput('report');
   const branch = core.getInput('branch');
 
-  const workingDirectory = '${{ inputs.repo }}';
+  const repo = '${{ inputs.repo }}';
 
   console.log('repo', repo);
   console.log('student', student);
