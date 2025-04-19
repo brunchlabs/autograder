@@ -4,7 +4,7 @@ const core = require('@actions/core');
 
 try {
   // Parse the GitHub context passed as a string
-  const githubContext = JSON.parse(core.getInput('github_context'));
+  const githubContext = JSON.parse(core.getInput('context'));
 
   // Now you can access all properties of the GitHub context
   const { repository, actor, ref, repository_owner } = githubContext;
