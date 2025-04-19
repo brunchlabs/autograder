@@ -1,0 +1,32 @@
+on:
+  workflow_call:
+    inputs:
+      repo:
+        type: string
+        required: true
+      commit:
+        type: string
+        required: true
+      student:
+        type: string
+        required: true
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone code
+        run: |
+          git clone https://github.com/${{ inputs.repo }} repo
+          cd repo
+          git checkout ${{ inputs.commit }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Jest tests
+        run: npx jest
