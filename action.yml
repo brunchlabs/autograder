@@ -27,7 +27,7 @@ runs:
     - name: Checkout repository
       uses: actions/checkout@v3
       with:
-        repository: brunogarcia/autograder
+        repository: brunchlabs/autograder
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
