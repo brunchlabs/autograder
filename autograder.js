@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+const core = require('@actions/core');
 try {
   const report = JSON.parse(fs.readFile('report.json', 'utf8'));
 
