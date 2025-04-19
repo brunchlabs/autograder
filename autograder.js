@@ -3,22 +3,11 @@ const fs = require('fs');
 const core = require('@actions/core');
 
 try {
-  // Parse the GitHub context passed as a string
-  console.log('before', core.getInput('context'), 'after');
-  // const githubContext = JSON.parse(core.getInput('context'));
+  const path = process.env.GITHUB_CONTEXT_FILE || 'github_context.json';
+  const raw = fs.readFileSync(path, 'utf8');
+  const context = JSON.parse(raw);
 
-  // console.log(githubContext);
-
-  // // Now you can access all properties of the GitHub context
-  // const { repository, actor, ref, repository_owner } = githubContext;
-
-  // // Use these values as needed for your autograder logic
-  // console.log(`Repository: ${repository}`);
-  // console.log(`Actor: ${actor}`);
-  // console.log(`Ref: ${ref}`);
-  // console.log(`Repository Owner: ${repository_owner}`);
-
-  // Continue with your autograder logic...
+  console.log(context);
 } catch (error) {
   core.setFailed(`Action failed: ${error.message}`);
 }

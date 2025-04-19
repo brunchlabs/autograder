@@ -30,7 +30,7 @@ runs:
 
     - name: Write report to file
       shell: bash
-      run: echo "${{ inputs.report }}" > report.json
+      run: echo "${{ inputs.report }}" > report.json && echo "${{ inputs.context }}" > context.json
 
     - name: Run autograder
       shell: bash
