@@ -25,24 +25,20 @@ inputs:
     required: true
 
 runs:
-  using: node20
-  main: 'autograder.js'
-  post: npm install
-  # steps:
-  #   - name: Checkout repository
-  #     uses: actions/checkout@v3
-  #     with:
-  #       repository: brunchlabs/autograder
+  using: 'composite'
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        repository: brunchlabs/autograder
 
-  #   - name: Set up Node.js
-  #     uses: actions/setup-node@v4
-  #     with:
-  #       node-version: '22'
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
 
-  #   - name: Install dependencies
-  #     shell: bash
-  #     run: npm ci
+    - name: Install dependencies
+      run: npm ci
 
-  #   - name: Run autograder
-  #     shell: bash
-  #     run: node autograder.js
+    - name: Run autograder
+      run: node autograder.js
