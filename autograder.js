@@ -12,7 +12,6 @@ try {
   // const report = fs.readFileSync('report.json', 'utf8');
 
   // console.log('report', report);
-  console.log('repo', repo);
 } catch (error) {
   core.setFailed(`Action failed: ${error.message}`);
 }
