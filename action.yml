@@ -4,6 +4,9 @@ inputs:
   repo:
     description: 'The repository name'
     required: true
+  repositoryId:
+    description: 'The repository ID'
+    required: true
   student:
     description: 'The student who pushed the code'
     required: true
@@ -44,6 +47,7 @@ runs:
       run: node autograder.js
       env:
         REPO: ${{ inputs.repo }}
+        REPOSITORY_ID: ${{ inputs.repositoryId }}
         STUDENT: ${{ inputs.student }}
         STUDENT_ID: ${{ inputs.studentId }}
         ORGANIZATION: ${{ inputs.organization }}

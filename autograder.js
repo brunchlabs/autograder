@@ -4,6 +4,7 @@ const core = require('@actions/core');
 function run() {
   try {
     const repo = process.env.REPO;
+    const repositoryId = process.env.REPOSITORY_ID;
     const student = process.env.STUDENT;
     const studentId = process.env.STUDENT_ID;
     const organization = process.env.ORGANIZATION;
@@ -13,6 +14,7 @@ function run() {
 
     const data = {
       repo,
+      repositoryId,
       student,
       studentId,
       organization,
