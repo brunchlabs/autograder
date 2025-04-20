@@ -41,7 +41,7 @@ runs:
 
     - name: Save report
       shell: bash
-      run: echo ${{ inputs.report }} > report.json
+      run: echo "${{ inputs.report }}" > report.json
 
     - name: Print report
       shell: bash
