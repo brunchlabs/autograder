@@ -1,7 +1,7 @@
 const axios = require('axios');
-// const core = require('@actions/core');
+const core = require('@actions/core');
 
-async function run() {
+function run() {
   try {
     const repo = process.env.REPO;
     const student = process.env.STUDENT;
@@ -21,13 +21,12 @@ async function run() {
       report,
     };
 
-    const response = await axios.post(
+    axios.post(
       'https://knowing-loyal-ringtail.ngrok-free.app/autograder',
       data
     );
   } catch (error) {
-    // core.setFailed(`Action failed: ${error.message}`);
-    console.error(`Action failed: ${error.message}`);
+    core.setFailed(`Action failed: ${error.message}`);
   }
 }
 
