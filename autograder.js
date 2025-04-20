@@ -1,5 +1,4 @@
 const core = require('@actions/core');
-// const fs = require('fs');
 
 try {
   const repo = process.env.REPO;
@@ -8,10 +7,8 @@ try {
   const organization = process.env.ORGANIZATION;
   const organizationId = process.env.ORGANIZATION_ID;
   const branch = process.env.BRANCH;
-
-  console.log('here', process.env.REPORT);
-
-  // const report = fs.readFileSync('report.json', 'utf8');
+  const report = process.env.REPORT;
+  console.log('here pape', report);
 
   // console.log('report', report);
 } catch (error) {
