@@ -39,6 +39,14 @@ runs:
       shell: bash
       run: npm ci
 
+    - name: Save report
+      shell: bash
+      run: echo ${{ inputs.report }} > report.json
+
+    - name: Print report
+      shell: bash
+      run: cat report.json
+
     - name: Run autograder
       shell: bash
       run: node autograder.js
