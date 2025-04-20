@@ -28,6 +28,6 @@ runs:
       env:
         REPOSITORY_NAME: ${{ github.event.repository.name }}
         STUDENT_ID: ${{ github.actor_id }}
-        ORGANIZATION_ID: ${{ github.repository_owner }}
+        ORGANIZATION_ID: ${{ github.repository_owner_id }}
         BRANCH: ${{ github.ref_name }}
         REPORT: ${{ inputs.report }}
