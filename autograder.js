@@ -7,7 +7,7 @@ try {
   const organization = process.env.ORGANIZATION;
   const organizationId = process.env.ORGANIZATION_ID;
   const branch = process.env.BRANCH;
-  const report = process.env.REPORT;
+  const report = JSON.parse(process.env.REPORT);
   console.log('here pape hehe', report.summary);
 
   // console.log('report', report);
