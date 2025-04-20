@@ -8,7 +8,7 @@ try {
   const organizationId = process.env.ORGANIZATION_ID;
   const branch = process.env.BRANCH;
   const report = JSON.parse(process.env.REPORT);
-  console.log('here pape hehe', report.summary);
+  console.log('here hehe', report);
 
   // console.log('report', report);
 } catch (error) {
