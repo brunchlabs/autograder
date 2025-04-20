@@ -1,20 +1,11 @@
 name: 'Autograder Action'
 description: 'Automatically grades student submissions based on a report.'
 inputs:
-  repo:
-    description: 'The repository name'
-    required: true
   repositoryId:
     description: 'The repository ID'
     required: true
-  student:
-    description: 'The student who pushed the code'
-    required: true
   studentId:
     description: 'The student ID'
-    required: true
-  organization:
-    description: 'The organization name'
     required: true
   organizationId:
     description: 'The organization ID'
