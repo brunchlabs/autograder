@@ -1,8 +1,8 @@
 name: 'Autograder Action'
 description: 'Automatically grades student submissions based on a report.'
 inputs:
-  repositoryId:
-    description: 'The repository ID'
+  repositoryName:
+    description: 'The repository name'
     required: true
   studentId:
     description: 'The student ID'
@@ -33,15 +33,12 @@ runs:
       shell: bash
       run: npm ci
 
-    - name: Run autograder
+    - name: Grade submission
       shell: bash
       run: node autograder.js
       env:
-        REPO: ${{ inputs.repo }}
-        REPOSITORY_ID: ${{ inputs.repositoryId }}
-        STUDENT: ${{ inputs.student }}
+        REPOSITORY_NAME: ${{ inputs.repositoryName }}
         STUDENT_ID: ${{ inputs.studentId }}
-        ORGANIZATION: ${{ inputs.organization }}
         ORGANIZATION_ID: ${{ inputs.organizationId }}
         BRANCH: ${{ inputs.branch }}
         REPORT: ${{ inputs.report }}

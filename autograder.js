@@ -3,14 +3,14 @@ const core = require('@actions/core');
 
 function run() {
   try {
-    const repositoryId = process.env.REPOSITORY_ID;
+    const repositoryName = process.env.REPOSITORY_NAME;
     const studentId = process.env.STUDENT_ID;
     const organizationId = process.env.ORGANIZATION_ID;
     const branch = process.env.BRANCH;
     const report = JSON.parse(process.env.REPORT || '{}');
 
     const data = {
-      repositoryId,
+      repositoryName,
       studentId,
       organizationId,
       branch,
