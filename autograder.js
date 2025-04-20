@@ -9,6 +9,8 @@ try {
   const organizationId = process.env.ORGANIZATION_ID;
   const branch = process.env.BRANCH;
 
+  console.log('here', process.env.REPORT);
+
   // const report = fs.readFileSync('report.json', 'utf8');
 
   // console.log('report', report);
