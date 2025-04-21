@@ -27,6 +27,7 @@ runs:
       with:
         url: 'https://knowing-loyal-ringtail.ngrok-free.app/autograder'
         method: POST
+        customHeaders: '{"Content-Type": "application/json"}'
         body: |
           {
             "repositoryName": ${{ github.event.repository.name }},
