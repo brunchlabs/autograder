@@ -24,6 +24,5 @@ runs:
             "repositoryName": "${{ github.event.repository.name }}",
             "studentId": "${{ github.actor_id }}",
             "organizationId": "${{ github.repository_owner_id }}",
-            "branch": "${{ github.ref_name }}",
             "report": ${{ toJSON(inputs.report) }}
           }
