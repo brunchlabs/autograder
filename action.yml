@@ -22,7 +22,6 @@ runs:
         data: |
           {
             "repositoryName": "${{ github.event.repository.name }}",
-            "studentId": "${{ github.actor_id }}",
             "organizationId": "${{ github.repository_owner_id }}",
             "report": ${{ toJSON(inputs.report) }}
           }
