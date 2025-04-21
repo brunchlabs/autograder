@@ -23,5 +23,6 @@ runs:
           {
             "repositoryName": "${{ github.event.repository.name }}",
             "organizationId": "${{ github.repository_owner_id }}",
+            "branch": "${{ github.ref_name }}",
             "report": ${{ toJSON(inputs.report) }}
           }
