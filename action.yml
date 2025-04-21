@@ -23,11 +23,25 @@ runs:
       run: npm ci
 
     - name: Grade submission
-      shell: bash
-      run: node autograder.js
-      env:
-        REPOSITORY_NAME: ${{ github.event.repository.name }}
-        STUDENT_ID: ${{ github.actor_id }}
-        ORGANIZATION_ID: ${{ github.repository_owner_id }}
-        BRANCH: ${{ github.ref_name }}
-        REPORT: ${{ inputs.report }}
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: 'https://knowing-loyal-ringtail.ngrok-free.app/autograder'
+        method: POST
+        body: |
+          {
+            "repositoryName": ${{ github.event.repository.name }},
+            "studentId": ${{ github.actor_id }},
+            "organizationId": ${{ github.repository_owner_id }},
+            "branch": ${{ github.ref_name }},
+            "report": ${{ inputs.report }}
+          }
+
+    # - name: Grade submission
+    #   shell: bash
+    #   run: node autograder.js
+    #   env:
+    #     REPOSITORY_NAME: ${{ github.event.repository.name }}
+    #     STUDENT_ID: ${{ github.actor_id }}
+    #     ORGANIZATION_ID: ${{ github.repository_owner_id }}
+    #     BRANCH: ${{ github.ref_name }}
+    #     REPORT: ${{ inputs.report }}
