@@ -16,7 +16,7 @@ runs:
     - name: Grade submission
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'https://knowing-loyal-ringtail.ngrok-free.app/autograder'
+        url: 'https://hookstation.classflow.brunchlabs.com/autograder'
         method: POST
         customHeaders: '{"Content-Type": "application/json"}'
         data: |
