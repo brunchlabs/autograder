@@ -36,13 +36,3 @@ runs:
             "branch": "${{ github.ref_name }}",
             "report": ${{ toJSON(inputs.report) }}
           }
-
-    # - name: Grade submission
-    #   shell: bash
-    #   run: node autograder.js
-    #   env:
-    #     REPOSITORY_NAME: ${{ github.event.repository.name }}
-    #     STUDENT_ID: ${{ github.actor_id }}
-    #     ORGANIZATION_ID: ${{ github.repository_owner_id }}
-    #     BRANCH: ${{ github.ref_name }}
-    #     REPORT: ${{ inputs.report }}
